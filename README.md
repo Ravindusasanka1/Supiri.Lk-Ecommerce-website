@@ -10,5 +10,4 @@ Supiri.Lk is a modern, responsive, and full-stack e-commerce web application dev
 - **Database:** MongoDB Atlas
 - **Authentication & Media Storage:** Firebase
 - **Payment Gateway:** Stripe API
-- **Generative AI:** Google Gemini AI (Smart Size Guide & Recommendations)
 - **Development & Project Management:** Visual Studio Code, Git, GitHub, Jira (Agile/Scrum)
