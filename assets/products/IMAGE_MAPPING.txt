@@ -1,0 +1,21 @@
+SUPIRI.LK PRODUCT IMAGE MAPPING
+
+Customer product colour image switching:
+- Product 1: Oxford Casual Shirt
+  - White     -> p1-white.jpg
+  - Black     -> p1-black.jpg
+  - Light Blue -> p1-light-blue.jpg
+
+- Product 2: Classic Polo
+  - Navy      -> p2-navy.jpg
+  - White     -> p2-white.jpg
+  - Black     -> p2-black.jpg
+
+The above five images were supplied by the user and added to the project.
+
+Smart Trouser additional user images:
+- smart-trouser-stone.jpg = user-provided stone/grey trouser
+- smart-trouser-navy.jpg = user-provided navy trouser
+- smart-trouser-cream.jpg = user-provided cream trouser
+
+- Smart Trouser: only Stone, Navy, and Cream are available as colour options. Previous Charcoal and Black options were removed.
