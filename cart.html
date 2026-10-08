@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Cart — Supiri.Lk</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Minimal Navigation Bar -->
+  <nav class="navbar sticky-top">
+    <div class="container py-3">
+      <a class="navbar-brand brand" href="index.html">
+        SUPIRI.LK
+        <small>GENTS COLLECTION</small>
+      </a>
+      <div class="d-flex align-items-center gap-3">
+        <a class="small text-uppercase fw-semibold tracking-wider text-dark" href="shop.html">
+          Continue shopping <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+        <a href="#" class="nav-action-btn auth-user-btn ms-2 d-none d-md-inline-block" data-bs-toggle="modal" data-bs-target="#authModal">
+          <i class="bi bi-person me-1"></i> Login
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cart Main View -->
+  <main class="py-5">
+    <div class="container">
+      <div class="mb-4 mb-lg-5">
+        <div class="section-label mb-1">YOUR SELECTION</div>
+        <h1 class="display-5 serif">Your cart</h1>
+      </div>
+
+      <div class="row g-5">
+        <!-- Cart Items List -->
+        <div class="col-lg-7 col-xl-8">
+<div id="cartItems"></div>
+        </div>
+
+        <!-- Order Summary Card matching Screenshot 4 -->
+        <div class="col-lg-5 col-xl-4">
+          <div class="summary shadow-lg">
+            <div class="section-label text-gold mb-3" style="font-size:0.68rem; letter-spacing:0.2em;">ORDER SUMMARY</div>
+            <div class="d-flex justify-content-between mb-3">
+              <span class="text-white-50">Subtotal</span>
+              <span class="fw-semibold subtotal">Rs. 0</span>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+              <span class="text-white-50">Delivery</span>
+              <span class="fw-semibold delivery">Rs. 0</span>
+            </div>
+            <hr class="line my-4">
+            <div class="d-flex justify-content-between fw-bold fs-4 mb-4">
+              <span>Total</span>
+              <span class="text-gold total">Rs. 0</span>
+            </div>
+            <button class="btn btn-gold w-100 py-3 trigger-stripe-checkout">
+              Proceed to checkout <i class="bi bi-arrow-right ms-2"></i>
+            </button>
+            <div class="small text-white-50 mt-3 text-center" style="font-size:0.75rem;">
+              <i class="bi bi-shield-lock me-1 text-gold"></i> Protected by Stripe 256-bit Encryption
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-0">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-md-5">
+          <div class="brand text-white">
+            <span class="brand-main">SUPIRI</span><span class="brand-dot">.LK</span>
+            <small class="text-white-50">GENTS COLLECTION</small>
+          </div>
+          <p class="small text-white-50 mt-3" style="max-width: 360px;">Modern menswear, thoughtfully curated for everyday confidence in Sri Lanka.</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <h6 class="text-uppercase tracking-wider small text-gold fw-bold mb-3">Shop</h6>
+          <a class="footer-link" href="shop.html">New Arrivals</a>
+          <a class="footer-link" href="shop.html?cat=Shirts">Shirts</a>
+          <a class="footer-link" href="shop.html?cat=T-Shirts">T-Shirts</a>
+          <a class="footer-link" href="shop.html?cat=Trousers">Trousers</a>
+        </div>
+        <div class="col-6 col-md-2">
+          <h6 class="text-uppercase tracking-wider small text-gold fw-bold mb-3">Help &amp; Support</h6>
+          <a class="footer-link" href="size-finder.html">Smart Size Guide</a>
+          <a class="footer-link" href="#" data-bs-toggle="modal" data-bs-target="#faqModal">FAQs</a>
+          <a class="footer-link" href="#" data-open-contact>Contact Us</a>
+        </div>
+        <div class="col-md-3">
+          <h6 class="text-uppercase tracking-wider small text-gold fw-bold mb-3">Follow Along</h6>
+          <div class="d-flex gap-3 fs-5 mt-2">
+            <a href="#" class="text-white-50 text-white-hover" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white-50 text-white-hover" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white-50 text-white-hover" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-top border-secondary mt-5 pt-4 small text-white-50 d-flex justify-content-between flex-wrap gap-2">
+        <div class="footer-copyright">© 2026 Supiri.Lk Gents Collection. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Customer Auth Modal -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-0 shadow-lg">
+        <div class="modal-header border-0 pb-0">
+          <ul class="nav nav-tabs border-0 w-100" role="tablist">
+            <li class="nav-item flex-fill text-center">
+              <button class="auth-tab-btn active w-100" data-bs-toggle="tab" data-bs-target="#loginTab">Log In</button>
+            </li>
+            <li class="nav-item flex-fill text-center">
+              <button class="auth-tab-btn w-100" data-bs-toggle="tab" data-bs-target="#registerTab">Register</button>
+            </li>
+          </ul>
+          <button type="button" class="btn-close ms-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5">
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="loginTab">
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label class="form-label small text-uppercase fw-bold">Email Address</label>
+                  <input id="loginEmail" type="email" class="form-control rounded-0" placeholder="name@example.com" required>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label small text-uppercase fw-bold">Password</label>
+                  <input type="password" class="form-control rounded-0" placeholder="••••••••" required>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <div class="form-check">
+                    <input class="form-check-input rounded-0" type="checkbox" id="rememberMe" checked>
+                    <label class="form-check-label small" for="rememberMe">Remember me</label>
+                  </div>
+                  <a href="#" class="small text-muted text-underline">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-dark-custom w-100 py-3">Log In</button>
+              </form>
+            </div>
+            <div class="tab-pane fade" id="registerTab">
+              <form id="registerForm">
+                <div class="mb-3">
+                  <label class="form-label small text-uppercase fw-bold">Full Name</label>
+                  <input id="regName" type="text" class="form-control rounded-0" placeholder="Kamal Perera" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label small text-uppercase fw-bold">Email Address</label>
+                  <input id="regEmail" type="email" class="form-control rounded-0" placeholder="kamal@example.com" required>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label small text-uppercase fw-bold">Password</label>
+                  <input type="password" class="form-control rounded-0" placeholder="Create a strong password" required>
+                </div>
+                <button type="submit" class="btn btn-gold w-100 py-3">Create Account</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notifications -->
+  <div class="modal fade" id="notificationsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content supiri-modal">
+        <div class="modal-header border-0">
+          <div><div class="section-label mb-1">UPDATES</div><h5 class="serif mb-0">Notifications</h5></div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-0"><div class="notification-empty"><i class="bi bi-bell fs-2"></i><p class="mb-0 mt-3">You’re all caught up.</p><small>No new notifications right now.</small></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Us -->
+  <button class="contact-tab" type="button" data-open-contact aria-label="Get in touch" title="Get in touch"><i class="bi bi-chat-dots"></i><span class="contact-tooltip">Get in touch</span></button>
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content supiri-modal contact-modal">
+        <div class="modal-header border-0">
+          <div><div class="section-label mb-1">WE’RE HERE TO HELP</div><h5 class="serif mb-0">Contact Us</h5></div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-0">
+          <p class="text-secondary">Have a question about an order, product, or size? Send us a message and our team will get back to you.</p>
+          <form id="contactForm">
+            <div class="mb-3"><label class="form-label small text-uppercase fw-bold">Name</label><input class="form-control" required placeholder="Your name"></div>
+            <div class="mb-3"><label class="form-label small text-uppercase fw-bold">Email</label><input type="email" class="form-control" required placeholder="you@example.com"></div>
+            <div class="mb-3"><label class="form-label small text-uppercase fw-bold">Message</label><textarea class="form-control" rows="4" required placeholder="How can we help?"></textarea></div>
+            <button class="btn btn-gold w-100" type="submit">Send Message <i class="bi bi-arrow-right ms-2"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQs -->
+  <div class="modal fade" id="faqModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content supiri-modal">
+        <div class="modal-header border-0"><div><div class="section-label mb-1">HELP &amp; SUPPORT</div><h5 class="serif mb-0">FAQs</h5></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+        <div class="modal-body pt-0">
+          <div class="accordion accordion-flush" id="faqAccordion">
+            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq1">How do I choose my size?</button></h2><div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-secondary">Use our Smart Size Guide for a quick recommendation based on your measurements.</div></div></div>
+            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">How can I track my order?</button></h2><div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-secondary">Your order updates will be shared through the contact details provided at checkout.</div></div></div>
+            <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">Can I contact Supiri.LK?</button></h2><div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-secondary">Yes. Use the Contact Us tab on the left side of the page to send a message.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stripe Payment & Checkout Modal -->
+  <div class="modal fade" id="stripeCheckoutModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content stripe-modal-content">
+        <div class="stripe-header d-flex justify-content-between align-items-center">
+          <div>
+            <span class="stripe-badge mb-1 d-inline-block"><i class="bi bi-shield-lock me-1"></i> Stripe Secure Pay</span>
+            <h5 class="serif mb-0 text-white">Complete Your Order</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-lg-5">
+          <form id="stripePaymentForm">
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <h6 class="text-uppercase tracking-wider small fw-bold mb-3 border-bottom pb-2">1. Shipping Details</h6>
+                <div class="mb-3">
+                  <label class="form-label small text-muted mb-1">Full Name</label>
+                  <input id="stripeCardName" type="text" class="form-control stripe-input" placeholder="Kamal Perera" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label small text-muted mb-1">Delivery Address</label>
+                  <input type="text" class="form-control stripe-input" placeholder="No. 45, Galle Road" required>
+                </div>
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <label class="form-label small text-muted mb-1">City</label>
+                    <input type="text" class="form-control stripe-input" placeholder="Colombo" required>
+                  </div>
+                  <div class="col-6">
+                    <label class="form-label small text-muted mb-1">Phone Number</label>
+                    <input type="tel" class="form-control stripe-input" placeholder="077 123 4567" required>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <h6 class="text-uppercase tracking-wider small fw-bold mb-3 border-bottom pb-2">2. Payment Method (Stripe)</h6>
+                <div class="bg-paper p-3 border mb-3">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="small fw-semibold">Order Total</span>
+                    <span class="fw-bold fs-5 text-gold stripe-pay-amount">Rs. 0</span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label small text-muted mb-1">Card Number</label>
+                  <div class="card-input-wrapper">
+                    <input id="stripeCardNumber" type="text" class="form-control stripe-input font-monospace" placeholder="4242 4242 4242 4242" required>
+                    <i class="bi bi-credit-card-2-front card-brand-icon"></i>
+                  </div>
+                </div>
+                <div class="row g-2 mb-4">
+                  <div class="col-6">
+                    <label class="form-label small text-muted mb-1">Expiry Date</label>
+                    <input type="text" class="form-control stripe-input font-monospace" placeholder="MM / YY" maxLength="5" required>
+                  </div>
+                  <div class="col-6">
+                    <label class="form-label small text-muted mb-1">CVC / CVV</label>
+                    <input type="text" class="form-control stripe-input font-monospace" placeholder="123" maxLength="4" required>
+                  </div>
+                </div>
+                <button id="stripeSubmitBtn" type="submit" class="btn btn-gold w-100 py-3">
+                  Pay <span class="stripe-pay-amount">Rs. 0</span> via Stripe <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
